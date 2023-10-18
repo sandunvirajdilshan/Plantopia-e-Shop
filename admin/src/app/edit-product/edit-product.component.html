@@ -1,0 +1,44 @@
+<div class="section">
+  <div mat-dialog-title>
+      <h1>Edit Product</h1>
+  </div>
+      <div mat-dialog-content class="content">
+          <div class="row">
+              <mat-form-field>
+                  <mat-label>Product Name</mat-label>
+                  <input matInput [(ngModel)]="productName">
+              </mat-form-field>
+              <mat-form-field floatLabel="always">
+                  <mat-label>Product Price</mat-label>
+                  <input matInput type="number" [(ngModel)]="productPrice" class="example-right-align" placeholder="0">
+                  <span matTextPrefix>$&nbsp;</span>
+              </mat-form-field>
+          </div>
+          <div class="row">
+              <mat-form-field style="width:100%">
+                  <mat-label>Product Description</mat-label>
+                  <textarea matInput [(ngModel)]="productDescription"></textarea>
+              </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field style="width:100%">
+                <mat-label>Product Image Path</mat-label>
+                <input matInput [(ngModel)]="imagePath">
+            </mat-form-field>
+        </div>
+          <div class="row">
+              <mat-form-field>
+                  <mat-label>Date</mat-label>
+                  <input matInput type="date" [(ngModel)]="date" disabled>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>Time</mat-label>
+                  <input matInput type="time" [(ngModel)]="time" disabled>
+              </mat-form-field>
+          </div>
+      </div>
+  <div mat-dialog-actions class="action">
+      <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" (click)="editProduct()">Save</button>
+  </div>
+</div>

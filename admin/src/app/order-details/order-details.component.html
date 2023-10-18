@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ order.order_id }}</mat-card-title>
+        <mat-card-subtitle>:-| {{ order.status }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-dialog-content><hr>
+        <p>
+            <span style="font-size: large; font-weight: bold;">
+                {{firstName}} {{lastName}}
+            </span><br>
+            {{email}}
+        </p><hr>
+        <table>
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Product Name</th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <th style="text-align: right;">Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let item of order.details.split(',')">
+                    <tr>
+                        <td style="text-align: left;">{{ item.split(':')[0].trim() }}</td>
+                        <td></td>
+                        <td style="text-align: right;">{{ item.split(':')[1].trim() }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+        <hr>
+        <h2>Address:</h2>
+        <p>:-| {{ order.address }}</p>
+    </mat-dialog-content><br>
+    <mat-card-actions style="align-items: center;justify-content: center;text-align: center;">
+        <button color="warn" mat-raised-button [mat-dialog-close]="false">Close</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="completebtn" color="accent" mat-raised-button *ngIf="order.status === 'Delivered'">Delivered</button>
+        <button color="primary" mat-raised-button *ngIf="order.status === 'Processing'" (click)="updateOrderS(order.order_id)">Shipped</button>
+        <button color="primary" mat-raised-button *ngIf="order.status === 'Shipped'" (click)="updateOrderP(order.order_id)">Cancel</button>
+    </mat-card-actions>
+</mat-card>

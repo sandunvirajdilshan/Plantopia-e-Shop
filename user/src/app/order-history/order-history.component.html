@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<br><br>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Order History</h1>
+
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orderData">
+          <td>{{order.order_id}}</td>
+          <td>{{order.date}}</td>
+          <td>$ {{order.amount}}</td>
+          <td>
+            <span [class]="'tag ' + (order.status === 'Delivered' ? 'is-success' : 'is-warning')">{{order.status}}</span>
+          </td>
+          <td>
+            <button class="button tag is-success" *ngIf="order.status === 'Shipped'" (click)="updateOrder(order.order_id)">Delivered</button>
+            <button class="button tag is-danger" *ngIf="order.status === 'Processing'" (click)="deleteOrder(order.id)">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<app-footer></app-footer>

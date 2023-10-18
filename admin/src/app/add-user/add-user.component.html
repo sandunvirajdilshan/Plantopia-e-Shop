@@ -1,0 +1,43 @@
+<div class="section">
+    <div mat-dialog-title>
+        <h1>Add User</h1>
+    </div>
+        <div mat-dialog-content class="content">
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>User First Name</mat-label>
+                    <input matInput [(ngModel)]="firstName">
+                </mat-form-field>
+                <mat-form-field floatLabel="always">
+                    <mat-label>User Last Name</mat-label>
+                    <input matInput [(ngModel)]="lastName" class="example-right-align">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field style="width:100%">
+                    <mat-label>User E-mail</mat-label>
+                    <textarea matInput [(ngModel)]="email"></textarea>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field style="width:100%">
+                    <mat-label>User Password</mat-label>
+                    <input matInput [(ngModel)]="password">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Date</mat-label>
+                    <input matInput type="date" [(ngModel)]="date" disabled>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Time</mat-label>
+                    <input matInput type="time" [(ngModel)]="time" disabled>
+                </mat-form-field>
+            </div>
+        </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit" (click)="addUser()">Add</button>
+    </div>
+</div>

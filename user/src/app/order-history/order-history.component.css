@@ -1,0 +1,13 @@
+.button{
+    padding: 5px;
+    font-size: smaller;
+}
+
+.is-success:hover {
+    background-color: var(--high-color);
+}
+
+.is-danger:hover{
+    color: #fff;
+    background-color: #e92929;
+}

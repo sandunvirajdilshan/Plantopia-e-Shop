@@ -1,0 +1,15 @@
+<div class="section">
+    <div mat-dialog-title>
+        Delete Product
+    </div>
+    <div mat-dialog-content>
+        <mat-form-field>
+            <mat-label>Product ID</mat-label>
+            <input matInput [(ngModel)]="productID">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="warn" (click)="deleteProduct()">Delete</button>
+    </div>
+</div>

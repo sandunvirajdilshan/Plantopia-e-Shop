@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<br><br>
+<app-navbar></app-navbar>
+<br><br>
+<section class="section">
+  <div class="card" style="text-align: center;" *ngFor="let item of wishlistData">
+    <div><img [src]="item.imagePath" width="100px" height="100px"></div>
+    <h3>{{item.productName}}</h3>
+    <h3>$ {{item.productPrice}}</h3>
+    <button class="button is-danger is-small" (click)="removeItem(item.id)">
+      Remove
+    </button>&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="button is-success is-small" (click)="openProductDetails(item)">
+      Details
+    </button>
+  </div>
+</section>
+<section class="section" *ngIf="isEmptyWishlist">
+  <div class="container has-text-centered">
+    <h1>Your wishlist is empty.!</h1>
+  </div>
+</section>
+<app-footer></app-footer>

@@ -1,0 +1,11 @@
+button{
+    flex: 1;
+}
+
+hr {
+    background-color: #000;
+}
+
+.completebtn{
+    background-color: #1ab11a;
+}

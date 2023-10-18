@@ -1,0 +1,54 @@
+<header>
+  <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item logo" routerLink="">
+        <i class="fas fa-leaf"></i>&nbsp;Plantopia
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" [ngClass]="{ 'is-active': isMenuOpen }" (click)="toggleMenu()">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu" [ngClass]="{ 'is-active': isMenuOpen }">
+      <div class="navbar-start">
+        <a class="navbar-item" routerLink="">Home</a>
+        <a class="navbar-item" routerLink="/about">About</a>
+        <a class="navbar-item" routerLink="/products">Products</a>
+        <a class="navbar-item" routerLink="/contact">Contact Us</a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <i class="fa fa-user" style="font-size: large; font-weight: bold;"></i>
+          </a>
+          <div class="navbar-dropdown is-right">
+            <div class="has-dropdown is-hoverable" *ngIf="isLoggedIn">
+              <a  routerLink="/account" class="navbar-item">
+                Account
+              </a>
+              <a routerLink="/cart"class="navbar-item">
+                Cart
+              </a>
+              <a routerLink="/wishlist"class="navbar-item">
+                Wish List
+              </a>
+              <a routerLink="/order-history"class="navbar-item">
+                Order History
+              </a><br>
+              <a  (click)="logout()" class="navbar-item button">
+                Logout
+              </a>
+            </div>
+            <div  *ngIf="!isLoggedIn"> 
+              <a class="navbar-item button" routerLink="/login">Login</a>
+              <a class="navbar-item button" routerLink="/signup">SignUp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

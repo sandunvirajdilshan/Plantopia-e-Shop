@@ -1,0 +1,14 @@
+.columns {
+    margin-right: 1%;
+    margin-left: 1%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav {
+    width: fit-content;
+    display: inline-block;
+}
+
+

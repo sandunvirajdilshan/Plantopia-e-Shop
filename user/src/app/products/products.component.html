@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<br><br>
+
+<div class="section">
+    <div >
+        <div class="column has-text-centered">
+            <div class="title">
+                Plant Paradise
+            </div>
+            <p>Discover Our Exquisite Collection of Green Delights</p>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-2"></div>
+        <div class="column">
+            <section class="product section container" id="products">
+                <div class="product-container grid">
+                    <article class="product-card" *ngFor="let product of products;">
+            
+                        <img [src]="product.imagePath" alt="" class="product-img">
+            
+                        <h3 class="product-title">{{ product.productName }}</h3>
+                        <span class="product-price">$ {{ product.productPrice }}</span>
+                        <br>
+                        <div class="buttons">
+                            <button mat-raise class="product-button" (click)="openProductDetails(product)"><i class="fas fa-info-circle"></i></button>
+                            <button class="product-button" (click)="addToWishlist(product)"><i class="fas fa-heart"></i></button>
+                            <button class="product-button" (click)="addToCart(product)">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+        <div class="column is-1"></div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,50 @@
+.aboutimg {
+    border-radius: 50px;
+    height: 70%;
+}
+
+.square {
+    position: absolute;
+    top: 10rem;
+    left: 14rem;
+    width: 250px;
+    height: 250px;    background-color: rgba(0, 0, 0, 0.5);
+    border: 25px solid #ffffff;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 50px; 
+}
+
+
+.about {
+    font-size: large;
+}
+
+.title-about {
+    font-size:3rem;
+}
+
+.caption {
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.border {
+    border: 1px solid;
+}
+
+
+.button {
+    padding: 30px;
+    color: var(--high-color);
+    background-color: #ececec;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+  }
+  
+  .button:hover {
+    color: #ffffff;
+    background-color: var(--high-color);
+  }

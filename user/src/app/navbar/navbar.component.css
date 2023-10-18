@@ -1,0 +1,35 @@
+.navbar {
+    position: fixed;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+.navbar-start {
+    margin-left: 59vh;
+    margin-right: 50vh;
+}
+
+.navbar-item:hover {
+    text-align: center;
+    color: var(--high-color);
+}
+.navbar-end .navbar-item:hover {
+    color: var(--high-color);
+}
+
+.navbar-end .navbar-link:hover{
+    color: var(--high-color);
+}
+
+.navbar-end .button {
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.navbar-end .button:hover {
+    background-color: var(--high-color);
+    color: #ffffff;
+}

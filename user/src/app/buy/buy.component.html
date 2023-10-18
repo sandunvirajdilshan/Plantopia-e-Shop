@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+<br><br>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <h1 class="title">Your Cart</h1>
+        <div class="cart-summary">
+          <table class="table">
+            <tr *ngFor="let item of ohsGYRDKKybnbj">
+              <td>{{ item.productName }}&nbsp;:</td>
+              <td>{{ item.quantity }}</td>
+              <td>$ {{ item.productPrice * item.quantity }}</td>
+            </tr>
+            <tr>
+              <td colspan="2" style="text-align: right;">Total : </td>
+              <td style="text-align: left;">$ {{ total }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="column">
+        <h1 class="title">Checkout</h1>
+
+        <form class="checkout-form" [formGroup]="checkoutForm">
+
+          <div class="field">
+            <label class="label">Card Number</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="1234 5678 9012 3456" formControlName="cardNumber">
+              <div *ngIf="checkoutForm.get('cardNumber')?.invalid && (checkoutForm.get('cardNumber')?.dirty || checkoutForm.get('cardNumber')?.touched)"
+                   class="help is-danger">
+                Card number is required and must be a 16-digit number.
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Card Holder Name</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="John Doe" formControlName="cardHolderName">
+              <div *ngIf="checkoutForm.get('cardHolderName')?.errors?.['required']" class="help is-danger">
+              </div>
+              <div *ngIf="checkoutForm.get('cardHolderName')?.errors?.['invalidCardHolderName']" class="help is-danger">
+                Card holder name must contain only letters and spaces.
+              </div>
+            </div>
+          </div>
+
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label">Expiration Date</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="MM/YYYY" formControlName="expirationDate">
+                  <div *ngIf="checkoutForm.get('expirationDate')?.invalid && (checkoutForm.get('expirationDate')?.dirty || checkoutForm.get('expirationDate')?.touched)"
+                       class="help is-danger">
+                    Expiration date is required and must be in the format MM/YYYY.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">CVV</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="123" formControlName="cvv">
+                  <div *ngIf="checkoutForm.get('cvv')?.invalid && (checkoutForm.get('cvv')?.dirty || checkoutForm.get('cvv')?.touched)"
+                       class="help is-danger">
+                    CVV is required and must be a 3-digit number.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Billing Address</label>
+            <div class="control">
+              <textarea class="textarea" placeholder="Enter your billing address" formControlName="billingAddress" [(ngModel)]="address"></textarea>
+              <div *ngIf="checkoutForm.get('billingAddress')?.invalid && (checkoutForm.get('billingAddress')?.dirty || checkoutForm.get('billingAddress')?.touched)"
+                   class="help is-danger">
+                Billing address is required.
+              </div>
+            </div>
+          </div>
+
+          <div class="has-text-centered">
+            <button class="button is-primary" type="submit" (click)="onSubmit()" [disabled]="checkoutForm.invalid">
+              Place Order
+            </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button *ngIf="!cardDetails" class="button is-primary" (click)="saveCardDetails()" [disabled]="checkoutForm.invalid">Save Card</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

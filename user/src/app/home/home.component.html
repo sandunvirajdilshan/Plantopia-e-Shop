@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<br><br><br>
+<div class="section">
+  <div class="columns">
+    <div class="column">
+      <div class="main">
+        <h1 class="title main-title" style="font-size:9vh;">
+          Plantopia:<br><br> Your Exquisite Plant <br><br>Haven
+        </h1>
+        <p class="is-2 description">
+          Your ultimate destination for all things green and thriving. <br>
+          Step into our virtual plant paradise,<br>
+           and explore a curated collection of exquisite plants..,
+        </p><br>
+        <a routerLink="/about" class="button button--flex">
+          Explore&nbsp;<i class="fas fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+    <div class="column is-6">
+      <br>
+      <section class="container">
+        <div class="slider-wrapper">
+          <div class="slider" #slider>
+            <img id="slide-1" src="../../assets/img/home/home_1.jpg"/>
+            <img id="slide-2" src="../../assets/img/home/home_2.jpg" />
+            <img id="slide-3" src="../../assets/img/home/home_3.jpg" />
+          </div>
+          <div class="slider-nav">
+            <a (click)="navigateToSlide(0)"></a>
+            <a (click)="navigateToSlide(1)"></a>
+            <a (click)="navigateToSlide(2)"></a>
+          </div>
+        </div>
+        <div class="social">
+          <span class="social-follow">Follow Us</span>
+      
+          <div class="social-links">
+            <a href="https://www.facebook.com/" target="_blank" class="social-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="social-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column"></div>
+  </div>
+</div>
+
+<app-footer></app-footer>

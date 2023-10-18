@@ -1,0 +1,14 @@
+<div class="content" style="justify-content: center; align-items: center; text-align: center;">
+  <div mat-card-title><h1><b><i>Product Details</i></b>
+  </h1></div>
+  <div mat-card-content>
+    <div><img [src]="product.imagePath" width="200px" height="200px"></div>
+    <div><b><i>Name:</i></b><br>{{product.productName}}</div>
+    <div><b><i>Description:</i></b><br>{{product.productDescription}}</div>
+    <div><b><i>Price:</i></b><br>$ {{product.productPrice}}</div>
+  </div><br>
+  <div mat-card-actions >
+    <button button mat-raised-button color="warn" [mat-dialog-close]="false">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button button mat-raised-button color="primary" (click)="addToCart(product)" [mat-dialog-close]="false">Add To Cart</button>
+  </div>
+</div>

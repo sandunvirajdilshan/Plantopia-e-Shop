@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<br><br>
+<section class="section">
+  <div class="container">
+    <h1 class="title">Shopping Cart</h1>
+    <div class="container" *ngIf="!isEmptyCart">
+      <table class="table is-fullwidth">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of ohsGYRDKKybnbj">
+            <td>{{ item.productName }}</td>
+            <td>$ {{ item.productPrice * item.quantity }}</td>
+            <td>
+              <input
+                style="width:17%"
+                class="input"
+                id="quantity"
+                type="number"
+                min="1"
+                [(ngModel)]="item.quantity"
+                (change)="updateQuantity()"
+                (input)="validateInput($event)"
+                (keydown)="disableTyping($event)"
+              />
+            </td>
+            <td>
+              <button
+                class="button is-danger is-small"
+                (click)="removeItem(item.id)"
+              >
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="has-text-right">
+      <strong>Total Price : $ {{ total }}</strong>
+    </div>
+    <div class="container has-text-centered" *ngIf="isEmptyCart">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="has-text-centered" *ngIf="!isEmptyCart">
+      <button class="button is-primary" (click)="checkout()">Checkout</button>
+    </div>
+    <div class="has-text-centered" *ngIf="isEmptyCart">
+      <button class="button is-primary" disabled>Checkout</button>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

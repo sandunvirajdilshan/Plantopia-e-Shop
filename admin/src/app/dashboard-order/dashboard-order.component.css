@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    margin-left: 13%;
+    margin-right: 10%;
+}
+
+.card {
+    width: fit-content;
+    display: inline-block;
+    margin-top: 1%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+}
+
+.status {
+    text-align: center;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.shipped {
+    background-color: #0f0fc7;
+}
+
+.processing {
+    background-color: #fa7e2b;
+}
+
+.delivered {
+    background-color: #069206;
+}
